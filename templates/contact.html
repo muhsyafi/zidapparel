@@ -1,0 +1,28 @@
+<div class="contact rel full-w block-left">
+	<div class="full-w rel">
+<iframe class="full-w" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1980.4216977520177!2d109.73457418891066!3d-6.9093216073453405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7024bd8a3c3291%3A0xfb71673330ddc7bc!2sProyonanggan+Tengah%2C+Kec.+Batang%2C+Kab.+Batang%2C+Jawa+Tengah+51216!5e0!3m2!1sid!2sid!4v1428005394617" width="600" height="100%" frameborder="0" style="border:0"></iframe>
+	</div>
+	<div class="full-w rel">
+		<div class="block-left rel w50 contact-form">
+			<form ng-submit="submit()" class="rel full-w left" name="contactForm">
+				<label>Your Name<sup>*</sup> :</label><br>
+				<input class="contact-text" type="text" ng-model="form.name" name="name" value="" placeholder="" required><br>
+				<label>Email<sup>*</sup> :</label><label ng-style="emailStyle" ng-show="emailShow">&nbsp;{{emailInfo}}</label><br>
+				<input class="contact-text" type="text" ng-model="form.email" name="email" value="" placeholder="" required><br>
+				<label>Phone Number<sup>*</sup> :</label><br>
+				<input class="contact-text" type="text" ng-model="form.phone" value="" placeholder=""><br>
+				<label>Social ID (BBM/Line/Facebook/Twiter) :</label><br>
+				<input class="contact-text" type="text" ng-model="form.social" value="" placeholder=""><br>
+				<label>Your Message<sup>*</sup> :</label><br>
+				<textarea class="contact-text" ng-model="form.message"></textarea>
+				<input type="submit" name="" value="Submit" class="btn-warning">
+				<label ng-show="info" ng-style="infoStyle">{{text}}</label>
+			</form>
+		</div>
+		<div class="block-left rel w50" ng-repeat="contact in contacts">
+			<h1>Contact Us</h1>
+			<button class="btn-warning phone">{{contact.phone}}</button><br><br>
+			<p class="left contact-us" ng-bind-html="contact.detail"></p>
+		</div>
+	</div>
+</div>

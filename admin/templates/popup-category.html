@@ -1,0 +1,22 @@
+		<div class="row" ng-controller="categoryAddCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Category&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit(category)" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Cancel" class="btn btn-danger" ng-click="reset()"></div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="state" data-checkbox="true" >Item Name</td>
+						        <td data-field="id" data-sortable="true">Item Value</td>
+						    </tr>
+						    <tr>
+						        <td><label>Category Name</label>&nbsp;&nbsp;&nbsp;<span class="label label-{{labelClass}}" ng-show="labelShow">{{labelText}}</span></td>
+						        <td><input type="text" name="name" ng-model="category" ng-minlength="5" ng-required="true" class="full-w" name="" value="" placeholder=""></td>					    
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

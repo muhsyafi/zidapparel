@@ -1,0 +1,23 @@
+		<div class="row" ng-controller="sizeAddCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Size&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit()" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Cancel" class="btn btn-danger" ng-click="reset()"></div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="state" data-checkbox="true" >Item Name</td>
+						        <td data-field="id" data-sortable="true">Item Value</td>
+						    </tr>
+						    <tr>
+						        <td><label>Parent Product</label></td>
+						        <td><select ng-model="parent" ng-options="item.cat_name for item in adds"><option value="" >Select Product</option></select></td>					    
+						    </tr>
+						    <tr><td>Available Size&nbsp;&nbsp;&nbsp;<span class="label label-{{labelClass}}" ng-show="labelShow">{{labelText}}</span></td><td><input class="full-w" type="text" name="" ng-model="size" value="" placeholder="Pisahkan dengan koma (,)"></td></tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

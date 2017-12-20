@@ -1,0 +1,26 @@
+		<div class="row no-padding">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				
+			</div>
+		</div>
+		<div class="row no-padding table-unik">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>Link</td>
+					<td>Icon</td>
+					<td style="width:100px;">Action</td>
+				</tr>
+				<tr ng-repeat="item in items">
+					<td>{{item.name}}</td>
+					<td>{{item.link}}</td>
+					<td>{{item.image}}</td>				
+					<td>
+						<button type="button" ng-click="linkDelete(item.id)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+						<button type="button" ng-click="linkEdit(item.id,item.name,item.link,item.image,'templates/popup-link.html')" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></button>
+					</td>				
+				</tr>
+			</table>
+			<br>
+			<button type="button" ng-click="linkAdd('templates/popup-link.html')" class="btn btn-primary" aria-label="left align"><span class="glyphicon glyphicon-plus">Add</span></button>
+		</div><!--/.row-->	

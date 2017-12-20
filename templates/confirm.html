@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<form method="POST" role="form">	
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  style="border-right:1px solid #266098;">
+						<p ng-bind-html="bill" class="left"></p>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="row">
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<input type="text" class="form-control norad" id="" placeholder="Input your order ID" ng-model="order.id">
+					</div>
+					<div class="row">
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<div class="btn btn-primary btn-upload" ng-file-select ng-file-change="upload($files)">Upload</div>
+						</div>
+					</div>
+					<div class="row pd5">
+								<div class="progress progress-upload" ng-show="progressShow">
+							    	<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+							    </div>
+					</div>
+					<div class="row">
+						<img ng-src="{{image}}" ng-show="imageShow" width="400px" height="auto">
+					</div>
+				<br>
+			<div class="row">
+				<button type="submit" class="btn btn-primary" ng-click="submit(order.id,image)">Submit</button>
+			</div>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+	<div class="row" ng-show="pesan">
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-md-offset-1">
+			<h4>Terima kasih, telah melakukan pembayaran, kami secepatnya akan melakukan konfirmasi kepada anda</h4>
+		</div>
+	</div>
+</div>

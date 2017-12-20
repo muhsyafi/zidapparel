@@ -1,0 +1,28 @@
+<div class="item-detail rel" ng-repeat="item in items">
+	<div class="block-left item-image">
+		<img class="item-image-main cp" ng-src="{{image}}" imageonload>
+		<img class="loader preview-loader abs" src="assets/img/loader.gif">
+	</div>
+	<div class="block-left rel mg5">
+		<h1 class="uppercase left mrg0">{{item.cat_name}}</h1>
+		<p class="left">{{item.cat_detail}}</p>
+		<h3 class="left mrg0">{{item.price | currency:"Rp. "}}</h3>
+		<h4 class="left">Available Size</h4>
+		<label class="avalilable-size block-left rel cp" ng-repeat="size in sizes" ng-click="setSize(size,$index)" ng-class="{size:$index==selected}">{{size}}</label><span class="attribut-size">Click to set your order size</span>
+		<br><br><br>
+		<h4 class="left">Available Color</h4>
+		<button ng-repeat="color in colors" ng-class="{color:$index==selectedColor}" class="avalilable-color block-left mg5r rel" ng-click="setColorImage(color.image,color.color,$index)" style="background:{{color.color}}"></button>
+		<span class="attribut-color">Click to set your order color</span>
+		<br><br><br>
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-repeat="item in images" loader>
+				<div class="thumbnail-detail" ng-click="setPreview(item.image)">
+					<img class="main-image" ng-src="{{item.image}}">
+				</div>
+			</div>
+		</div>
+		<br>
+		<button class="btn-buy btn-warning" ng-click="buy('templates/popup-buy.html')">BUY</button>
+		<button class="btn btn-fb btn-primary" ng-click="share(item)">Share on Facebook</button>
+	</div>
+</div>

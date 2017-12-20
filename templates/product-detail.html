@@ -1,0 +1,6 @@
+<!-- Detail Product -->
+    <div class="best-product rel full-w">
+        <div class="bp-1 full-w rel"><label class="uppercase cp">{{name}}</label></div>  
+        <div class="bp-2 image block-left rel" ng-repeat="product in productDetails" loader><a ng-href="#/product/detail/{{product.cat_id}}"><img class="full-w full-h main-image" ng-src="{{product.cat_image}}"></a><div class="price-tag abs full-w"><label>{{product.cat_name}}</label><label>{{product.price | currency:"Rp. "}}</label></div></div>
+    </div>
+<!-- End DetailProduct -->

@@ -1,0 +1,50 @@
+		<div class="row" ng-controller="buyCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-body table-unik" ng-show="cartTemp">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="state" data-checkbox="true" >Item Name</td>
+						        <td data-field="id" data-sortable="true">Item Price</td>
+						        <td data-field="id" data-sortable="true">Item Size</td>
+						        <td data-field="id" data-sortable="true">QTY</td>
+						        <td data-field="id" data-sortable="true">Total</td>
+						    </tr>
+						    <tr>
+						        <td class="capital">{{cat_name}}</td>
+						        <td>{{price | currency:"Rp. "}}</td>					    
+						        <td>{{size}}</td>					    
+						        <td><input type="text" name="" value="" placeholder="" ng-model="qty" style="width:50px;text-align:center;"></td>					    
+						        <td style="width:200px;">{{price*qty | currency:"Rp. "}}</td>					    
+						    </tr>
+						    </thead>
+						</table>
+						<small class="left full-w block-left"><sup>*</sup>Penting!!! Lakukan konfirmasi pembayaran pada menu <b>BILL CONFIRM</b> dengan memasukan <b>ID Order</b> anda</small>
+						<br>
+						<h1>Your Order ID  : {{orderId}}</h1>
+							<input style="display:block;float:right;margin-left:5px;" class="btn btn-danger" type="reset" name="" value="Cancel" ng-click="reset()">
+							<input style="display:block;float:right;" class="btn btn-primary" type="button" name="" value="Continue" ng-click="cart()">
+					</div>
+					<div class="panel-body table-unik" ng-show="continue">
+						<table>
+							<tr>
+								<td class="left">Item Name</td>
+								<td class="left">Item Value</td>
+							</tr>
+							<tr><td class="left">Name</td><td>			<input ng-model="order.name" type="text" name="" value="" placeholder="" style="width:100%;"></td></tr>
+							<tr><td class="left">Phone number</td><td>	<input ng-model="order.phone" type="text" name="" value="" placeholder="" style="width:100%;"></td></tr>
+							<tr><td class="left">Email Address</td><td>	<input ng-model="order.email" type="text" name="" value="" placeholder="" style="width:100%;"></td></tr>
+							<tr><td class="left">Address</td><td>		<input ng-model="order.address" type="text" name="" value="" placeholder="" style="width:100%;"></td></tr>
+							<tr><td class="left">Client notes</td><td>	<input ng-model="order.notes" type="text" name="" value="" placeholder="" style="width:100%;"></td></tr>
+							<tr><td class="left">Total</td><td><label class="left block-left full-w">{{qty*price | currency:"Rp. "}}</label></td></tr>
+							<tr><td colspan="2">Jumlah transfer harus sesuai dengan yang tertera diatas, jangan digenapkan</td></tr>
+						</table>
+						<br>
+							<input style="display:block;float:right;margin-left:5px;" class="btn btn-danger" type="reset" name="" value="Cancel" ng-click="reset()">
+							<input style="display:block;float:right;" class="btn btn-primary" type="submit" name="" value="Order Now" ng-click="submit()">
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

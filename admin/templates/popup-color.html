@@ -1,0 +1,31 @@
+		<div class="row" ng-controller="colorAddCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Category&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit()" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Cancel" class="btn btn-danger" ng-click="reset()"></div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="state" data-checkbox="true" >Item Name</td>
+						        <td data-field="id" data-sortable="true">Item Value</td>
+						    </tr>
+						    <tr>
+						        <td><label>Parent Product</label></td>
+						        <td><select ng-model="parent" ng-options="item.cat_name for item in adds"><option value="" >Select Product</option></select></td>					    
+						    </tr>
+						    <tr><td>Color</td><td><button colorpicker style="background-color:{{color}};" class="btn btn-primary w30" type="button" colorpicker-position="top" ng-model="color">Change Color</button></td></tr>
+						    <tr><td>Image</td><td>
+						    	<div class="button btn-primary btn-upload" ng-file-select ng-file-change="upload($files)">Upload</div>
+						    	<div class="progress progress-upload">
+						    		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+						    	</div>
+						    	<img ng-src="../{{image}}" ng-show="imageShow" width="100px" height="auto">
+						    	<span class="label label-{{labelClass}}" ng-show="labelShow">{{labelText}}</span>
+						    </td></tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

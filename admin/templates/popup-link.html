@@ -1,0 +1,28 @@
+		<div class="row" ng-controller="linkAddCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Category&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit(name,link,image)" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Close" class="btn btn-danger" ng-click="reset()"><small>&nbsp;&nbsp;&nbsp;Dimensi icon harus berukuran maksimal 64x64 pixel (*.png)</small></div>
+					<div class="panel-body table-unik">
+					<table>
+						<tr>
+							<td>Name</td>
+							<td>Link</td>
+							<td>Image</td>
+						</tr>
+						<tr>
+							<td><input ng-model="name" type="text" name="" value="" placeholder="" style="width:100%"></td>
+							<td><input ng-model="link" type="text" name="" value="" placeholder="" style="width:100%"></td>
+							<td><input ng-model="image" type="text" name="" value="" placeholder="" style="width:100%"></td>
+						</tr>
+					</table>
+						<div class="button btn-primary btn-upload" ng-file-select ng-file-change="upload($files)">Upload</div>
+						    	<div class="progress progress-upload">
+						    		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+						    	</div>
+							<img ng-src="../{{image}}" ng-show="imageShow" width="100px" height="auto">
+						<span class="label label-{{labelClass}}" ng-show="labelShow">{{labelText}}</span>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

@@ -1,0 +1,32 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Data</li>
+			</ol>
+		</div><!--/.row-->
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<h1>Payment</h1>
+			</div>
+		</div>
+		<div class="row no-padding table-unik">
+			<table>
+				<tr>
+					<td>Bank</td>
+					<td>Rek</td>
+					<td>Icon</td>
+					<td style="width:100px;">Action</td>
+				</tr>
+				<tr ng-repeat="item in items">
+					<td>{{item.bank}}</td>
+					<td>{{item.rek}}</td>
+					<td><img ng-src="../{{item.image}}" alt="" height="20px"></td>				
+					<td>
+						<button type="button" ng-click="linkDelete(item.id)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+						<button type="button" ng-click="linkEdit(item.id,item.bank,item.rek,item.image,'templates/popup-pay.html')" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></button>
+					</td>				
+				</tr>
+			</table>
+			<br>
+			<button type="button" ng-click="linkAdd('templates/popup-pay.html')" class="btn btn-primary" aria-label="left align"><span class="glyphicon glyphicon-plus">Add</span></button>
+		</div><!--/.row-->	

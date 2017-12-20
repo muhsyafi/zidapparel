@@ -1,0 +1,119 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Data</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Table Data</h1>
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Categery Product&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary" ng-click="categoryAdd('templates/popup-category.html')">Add Category</button></div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="id" data-sortable="true">Item Name</td>
+						        <td data-field="id" data-sortable="true">Action</td>
+						    </tr>
+						    <tr ng-repeat="item in cats">
+						        <td>{{item.cat_name | uppercase}}</td>	
+						        <td class="center"><button class="button btn-danger" ng-click="categoryDelete(item.cat_id)">Delete</button></td>				    
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Product&nbsp;&nbsp;&nbsp;<button ng-click="productAdd('templates/popup-product.html')" class="btn btn-primary">Add Product</button>&nbsp;&nbsp;&nbsp;<input type="text" name="" value="" placeholder="Cari" ng-model="productFilter"></div>
+					<div class="panel-body table-data">
+						<table data-toggle="table" class="data-table">
+						    <thead>
+						    <tr style="background:#3791F9;text-transform:uppercase;color:white;height:32px;">
+						        <td data-field="id" data-align="right">Item ID</td>
+						        <td data-field="name">Item Name</td>
+						        <td data-field="price">Item Price</td>
+						        <td data-field="price">Item Detail</td>
+						        <td data-field="price">Action</td>
+						    </tr>
+						    	<tr ng-repeat="prod in products" ng-if="prod.cat_parent_ID==0">
+						    		<td style="padding:0px;" colspan="5"><h3>{{prod.cat_name}}</h3>
+						    			<div style="margin-top:5px;">
+						    				<table>
+    											<tr ng-repeat="item in products | filter:productFilter" ng-if="item.cat_parent_ID==prod.cat_id">
+						    		    			<td><a ng-href="../#/product/detail/{{item.cat_id}}" target="_blank">{{item.cat_id}}</a></td>
+						    		    			<td style="text-transform: capitalize">{{item.cat_name}}</td>
+						    		    			<td>{{item.price | currency:"Rp. "}}</td>
+						    		    			<td>{{item.cat_detail | limitTo:100}}</td>
+						    		    			<td><button class="button btn-danger" ng-click="productDelete(item.cat_id)">Delete</button></td>
+						    					</tr>
+						    				</table>
+						    			</div>
+						    		</td>
+						    	</tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->		
+		<!--
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Color</div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="id" data-sortable="true">Item Name</td>
+						        <td data-field="id" data-sortable="true">Color</td>
+						        <td data-field="id" data-sortable="true">Image</td>
+						        <td data-field="id" data-sortable="true">Action</td>
+						    </tr>
+						    <tr ng-repeat="item in colors | filter:colorFilter">
+						        <td style="text-transform:capitalize">{{item.cat_name}}</td>	
+						        <td style="background-color:{{item.color}}"></td>	
+						        <td>{{item.image}}</td>	
+						        <td class="center"><button class="button btn-danger" ng-click="colorDelete(item.cat_col_id)">Delete</button></td>				    
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Sizes</div>
+					<div class="panel-body table-unik">
+						<table data-toggle="table">
+						    <thead>
+						    <tr>
+						        <td data-field="id" data-align="right">Item Name</td>
+						        <td data-field="name">Available Size</td>
+						        <td data-field="price">Action</td>
+						    </tr>
+						    <tr ng-repeat="item in sizes | filter:productFilter">
+						        <td style="text-transform: capitalize">{{item.cat_name}}</td>
+						        <td>{{item.sizes}}</td>
+						        <td class="center"><button class="button btn-danger" ng-click="sizeDelete(item.cat_size_id)">Delete</button></td>
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>-->	

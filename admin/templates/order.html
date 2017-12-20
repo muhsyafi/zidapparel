@@ -1,0 +1,52 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Order</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Table Order</h1>
+			</div>
+		</div><!--/.row-->
+					
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Order List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" value="" placeholder="Cari" ng-model="productFilter"></div>
+					<div class="panel-body table-unik">
+						<table data-toggle="table">
+						    <thead>
+						    <tr>
+						        <td data-field="name">Order ID</td>
+						        <td data-field="price">Item ID</td>
+						        <td data-field="price">Contact Name</td>
+						        <td data-field="price">Phone Number</td>
+						        <td data-field="price">Email Address</td>
+						        <td data-field="price">Adress</td>
+						        <td data-field="price">Color</td>
+						        <td data-field="price">Price</td>
+						        <td data-field="price">QTY</td>
+						        <td data-field="price">Notes</td>
+						        <td data-field="price">Action</td>
+						    </tr>
+						    <tr ng-repeat="item in orders | filter:productFilter">
+						        <td style="text-transform: capitalize"><a ng-href="#/bill/{{item.cust_id}}">{{item.cust_id}}&nbsp;({{item.status}})</a></td>
+						        <td style="text-transform: capitalize"><a ng-href="../#/product/detail/{{item.item_id}}">{{item.item_id}}</a></td>
+						        <td style="text-transform: capitalize">{{item.contact_name}}</td>
+						        <td style="text-transform: capitalize">{{item.phone_number}}</td>
+						        <td style="text-transform: capitalize">{{item.email_address}}</td>
+						        <td style="text-transform: capitalize">{{item.address}}</td>
+						        <td style="text-transform: capitalize; background-color:{{item.color}}"></td>
+						        <td style="text-transform: capitalize">{{item.total_price | currency : ""}}</td>
+						        <td style="text-transform: capitalize">{{item.total_order}}</td>
+						        <td style="text-transform: capitalize">{{item.client_notes}}</td>
+						        <td class="center"><button class="button btn-danger" ng-click="productDelete(item.id)">Delete</button></td>
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	

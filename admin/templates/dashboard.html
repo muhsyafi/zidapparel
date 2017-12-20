@@ -1,0 +1,173 @@
+
+
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Selamat datang</h1>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+				<div class="col-md-4"><a href="#/order">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding"  style="height:auto;min-height:120px;">
+						<div class="col-sm-5 col-lg-6 widget-left" style="min-height:120px; background:#3791F9;">
+							<em class="glyphicon glyphicon-shopping-cart glyphicon-xl"></em>
+						</div>
+						<div class="col-sm-3 col-lg-4 widget-right v-center" style="min-height:120px;">
+							<div class="large">Orders</div><br>
+							<div class="large">{{count}}</div>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+			<div class="col-md-4 " ng-repeat="item in menus"><a href="{{item.url}}">
+				<div class="panel panel-widget">
+					<div class="row no-padding" style="height:auto;min-height:120px;">
+						<div class="col-sm-5 col-lg-6 widget-left" style="min-height:120px; background:{{item.color}};">
+							<em class="{{item.icon}} white glyphicon-xl" ></em>
+						</div>
+						<div class="col-sm-3 col-lg-4 widget-right v-center" style="min-height:120px;">
+							<div class="large">{{item.name}}<br><small>{{item.attribut}}</small></div>
+						</div>
+					</div>
+				</a>
+				</div>
+			</div>
+				<div class="col-md-4"><a href="#/comments">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding"  style="height:auto;min-height:120px;">
+						<div class="col-sm-5 col-lg-6 widget-left" style="min-height:120px; background:#3791F9;">
+							<em class="glyphicon glyphicon-shopping-cart glyphicon-xl"></em>
+						</div>
+						<div class="col-sm-3 col-lg-4 widget-right v-center" style="min-height:120px;">
+							<div class="large">Messages</div><br>
+							<div class="large">{{countMsg}}</div>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+				<div class="col-md-4 "><a href="#/link">
+				<div class="panel panel-widget">
+					<div class="row no-padding" style="height:auto;min-height:120px;">
+						<div class="col-sm-5 col-lg-6 widget-left" style="min-height:120px; background:#3791F9;">
+							<em class="glyphicon glyphicon-link white glyphicon-xl" ></em>
+						</div>
+						<div class="col-sm-3 col-lg-4 widget-right v-center" style="min-height:120px;">
+							<div class="large">Link<br></div>
+						</div>
+					</div>
+				</a>
+				</div>
+		</div><!--/.row-->
+		
+
+<!--		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Dashboard</li>
+			</ol>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Dashboard</h1>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<em class="glyphicon glyphicon-shopping-cart glyphicon-l"></em>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">{{count}}</div>
+							<div class="text-muted">Orders</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<em class="glyphicon glyphicon-comment glyphicon-l"></em>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">{{countMsg}}</div>
+							<div class="text-muted">Message</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-6 col-md-3" ng-repeat="item in stats">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Harian</h4>
+						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">{{item.day}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3" ng-repeat="item in stats">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Bulanan</h4>
+						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">{{item.month}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3" ng-repeat="item in stats">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Tahunan</h4>
+						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">{{item.year}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3" ng-repeat="item in stats">
+				<div class="panel panel-default">
+					<div class="panel-body easypiechart-panel">
+						<h4>Total</h4>
+						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">{{item.total}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+								
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default chat">
+					<div class="panel-heading" id="accordion"><span class="glyphicon glyphicon-comment"></span>Kritik dan Saran</div>
+					<div class="panel-body">
+						<ul>
+							<li class="left clearfix" ng-repeat="item in messages">
+								<span class="chat-img pull-left">
+									<img src="../assets/img/user.png" alt="User Avatar" class="img-circle" />
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header">
+										<strong class="primary-font capital">{{item.name}}</strong> <small class="text-muted">{{item.date_add}}</small>
+									</div>
+									<p>
+										{{item.message}}
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+-->

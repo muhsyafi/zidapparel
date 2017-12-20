@@ -1,0 +1,10 @@
+<!-- Best Product -->
+<div ng-repeat="product in products" ng-if="product.cat_parent_ID==0">
+    <div class="best-product rel full-w product">
+        <div class="bp-1 full-w rel"><a href="#/product/{{product.cat_name}}" title=""><label class="uppercase cp">{{product.cat_name}}</label></a></div> 
+        <div ng-repeat="list in products" ng-if="list.cat_parent_ID==product.cat_id">
+        	<div class="bp-2 image block-left rel" loader><a ng-href="#/product/detail/{{list.cat_id}}"><img class="full-w full-h main-image" ng-src="{{list.cat_image}}"></a><div class="price-tag abs full-w"><label>{{list.cat_name | uppercase}}</label><label>{{list.price | currency:"Rp. "}}</label></div></div>
+        </div>
+    </div>
+</div>
+<!-- End Best Product -->

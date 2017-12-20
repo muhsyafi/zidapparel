@@ -1,0 +1,31 @@
+<!-- Carousel -->
+    <div class="carousel-wrapper rel">
+        <div class="cr-1 block-left rel">
+    <!-- Carousel
+    ================================================== -->
+            <flex-slider slide="s in slides track by $index" animation="slide" slideshow-speed="1500" animation-speed="1000">
+              <li>
+                <img ng-src="{{s.image}}">
+              </li>
+            </flex-slider>            
+        </div>
+        <div class="cr-2 block-left" ng-repeat="contact in contacts">
+          <img ng-src="{{logo}}" alt="" width="100%">
+          <p class="quote" ng-bind-html="quote"></p>
+        </div>
+    </div>
+<!-- End Carousel -->
+
+<!-- Best Product -->
+    <div class="best-product rel full-w">
+        <div class="bp-1 full-w rel"><label>BEST PRODUCT</label></div>  
+        <div class="bp-2 image block-left rel" ng-repeat="best in bests | limitTo:4" loader><a ng-href="#/product/detail/{{best.cat_id}}"><img class="full-w full-h main-image" ng-src="{{best.cat_image}}"></a><div class="price-tag abs full-w"><label>{{best.cat_name | uppercase}}</label><label>{{best.price | currency:"Rp. "}}</label></div></div>
+    </div>
+<!-- End Best Product -->
+
+<!-- Newest Product -->
+    <div class="newest-product rel full-w">
+        <div class="np-1 full-w rel"><label>NEWEST PRODUCT</label></div>  
+        <div class="np-2 image block-left rel" ng-repeat="new in newests | limitTo:4" loader><a ng-href="#/product/detail/{{new.cat_id}}"><img class="full-w full-h main-image" ng-src="{{new.cat_image}}"></a><div class="price-tag abs full-w"><label>{{new.cat_name | uppercase}}</label><label>{{new.price | currency:"Rp. "}}</label></div></div>
+    </div>
+<!-- End Newest Product -->

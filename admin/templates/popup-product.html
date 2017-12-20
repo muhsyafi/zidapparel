@@ -1,0 +1,71 @@
+<style type="text/css">
+.popup{
+	height: auto;
+	width: 800px;
+}
+</style>
+		<div class="row" ng-controller="productAddCtrl">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Category&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit()" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input ng-show="updateBtn" type="submit" name="" value="Update" class="btn btn-success" ng-click="update()">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Cancel" class="btn btn-danger" ng-click="reset()"></div>
+					<div class="panel-body table-unik">
+						<table>
+						    <thead>
+						    <tr>
+						        <td data-field="state" data-checkbox="true" >Item Name</td>
+						        <td data-field="id" data-sortable="true">Item Value</td>
+						    </tr>
+						    <tr>
+						        <td><label>Parent Product</label></td>
+						        <td><select ng-model="product.parent" ng-click="categoryChange(product.parent)" ng-options="item.cat_name for item in adds"><option value="" >Select Category</option></select></td>					    
+						    </tr>
+						    <tr>
+						        <td><label>Parent Name</label></td>
+						        <td><select ng-model="product.parentName" ng-click="nameChange(product.parentName)" ng-options="item.cat_name for item in prods"><option value="" >Select Product Name</option></select></td>					    
+						    </tr>
+						    <tr><td>Name</td><td><input type="text" ng-disabled="disable" ng-model="product.name" class="full-w" name="" value="" placeholder=""></td></tr>
+						    <tr><td>Size</td><td><input type="text"  ng-model="product.size" class="full-w" name="" value="" placeholder="Jika  dari satu ukuran? Pisahkan dengan koma (,)"></td></tr>
+						    <tr><td>Product Detail	</td><td><textarea ng-model="product.detail" class="full-w"></textarea></td></tr>
+						    <tr><td>Price</td><td><input type="text" ng-model="product.price" class="full-w" name="" value="" placeholder="Harus dengan angka, jangan gunakan titik/koma"></td></tr>
+						    <tr><td>Image for color &nbsp; Resolusi (470 × 500)</td><td>
+						    	<div class="button btn-primary btn-upload" ng-file-select ng-file-change="upload($files)">Upload</div>
+						    	<div class="progress progress-upload" ng-show="progressShow">
+						    		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"  aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+						    	</div>
+						    </td></tr>
+						    <tr><td>Image for side  &nbsp; Resolusi (470 × 500)</td><td>
+						    	<div class="button btn-success btn-upload" ng-file-select ng-file-change="uploadSide($files)">Upload</div>
+						    	<div class="progress progress-upload" ng-show="progressShowSide">
+						    		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"  aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+						    	</div>
+						    </td></tr>
+						    <tr>
+						    	<td colspan="2" class="no-padding">
+						    		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding" ng-repeat="item in images">
+						    			<div class="panel panel-default rel">
+						    					<div class="panel-body">
+						    					  <img ng-src="../{{item.image}}" class="thumbnail" width="100%">
+						    					  <button colorpicker style="background-color:{{item.model}};" width="100%" class="btn btn-primary" type="button"  colorpicker-parent="true" ng-model="item.model">Change Color</button></td>
+						    					</div>
+						    				</div>	
+						    		</div>
+						    	</td>
+						    </tr>
+						    <tr>
+						    	<td colspan="2" class="no-padding">
+						    		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding" ng-repeat="item in imagesSide">
+						    			<div class="panel panel-default rel">
+						    					<div class="panel-body">
+						    					  <img ng-src="../{{item.image}}" class="thumbnail" width="100%"></td>
+						    					</div>
+						    				</div>	
+						    		</div>
+						    	</td>
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

@@ -1,0 +1,57 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Event</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Table Event</h1>
+			</div>
+		</div><!--/.row-->
+					
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Event List&nbsp;&nbsp;&nbsp;<button ng-click="eventTrue()" class="btn btn-primary">Add Event</button>&nbsp;&nbsp;&nbsp;<input type="text" name="" value="" placeholder="Cari" ng-model="productFilter"></div>
+					<div class="panel-body table-unik">
+						<table data-toggle="table">
+						    <thead>
+						    <tr>
+						        <td data-field="name">Event Name</td>
+						        <td data-field="price">Event Source</td>
+						        <td data-field="price">Event Detail</td>
+						        <td data-field="price">Action</td>
+						    </tr>
+						    <tr ng-repeat="item in events | filter:productFilter">
+						        <td style="text-transform: capitalize">{{item.name}}</td>
+						        <td>{{item.source}}</td>
+						        <td>{{item.detail | limitTo:30}}</td>
+						        <td><button class="button btn-danger" ng-click="eventDelete(item.id)">Delete</button></td>
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->	
+		<div class="row" ng-controller="eventAddCtrl" ng-show="eventShow">
+			<div class="col-lg-12"><form name="form">
+				<div class="panel panel-default">
+					<div class="panel-heading">Add Event&nbsp;&nbsp;&nbsp;<input type="submit" ng-click="submit()" class="btn btn-primary" value="Save">&nbsp;&nbsp;&nbsp;<input type="reset" name="" value="Cancel" class="btn btn-danger" ng-click="eventFalse()"></div>
+					<div class="panel-body table-unik">
+						    <input type="text" ng-model="name" class="full-w" name="" value="" placeholder="Event Name">
+						    <text-angular ng-model="detail"></text-angular>
+						    <input type="text" ng-model="source" class="full-w" name="" value="" placeholder="Isikan url Video / pilih upload gambar di bawah">
+						    	<div class="button btn-primary btn-upload" ng-file-select ng-file-change="upload($files)">Upload</div>
+						    	<div class="progress progress-upload">
+						    		<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}%</div>
+						    	</div>
+						    	<img ng-src="../{{image}}" ng-show="imageShow" width="100px" height="auto">
+						    	<span class="label label-{{labelClass}}" ng-show="labelShow">{{labelText}}</span>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div><!--/.row-->	

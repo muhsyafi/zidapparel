@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="panel panel-default">
+		  <div class="panel-heading">
+				<h2 class="title">User/Clients Comments</h2>
+		  </div>
+		  <div class="panel-body">
+				<div class="row">
+				<div class="panel panel-default" ng-repeat="item in items">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+								<h3 class="title">Name :{{item.name}}</h3>
+								<h4>E-mail :{{item.email}}</h4>
+								<h4>Sosial ID :{{item.sosial_id}}</h4>
+								<p>Message : {{item.message}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								<button type="button" class="btn btn-danger" ng-click="delMessage(item.id)">Remove</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+		  </div>
+	</div>
+</div>

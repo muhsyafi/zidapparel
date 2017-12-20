@@ -1,0 +1,75 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Data</li>
+			</ol>
+		</div><!--/.row-->
+		
+<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 >Statistik</h3>
+	  </div>
+	  <div class="panel-body">
+			<div class="row">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel-body center">
+						   	<h3 class="panel-title">Hari ini</h3>
+							<h1>{{day}}</h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<div class="panel panel-default center">
+						<div class="panel-body">
+						   	<h3 class="panel-title">Minggu ini</h3>
+							<h1>{{month}}</h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<div class="panel panel-default center">
+						<div class="panel-body">
+						   	<h3 class="panel-title">Tahun ini</h3>
+							<h1>{{year}}</h1>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<div class="panel panel-default center">
+						<div class="panel-body">
+						   	<h3 class="panel-title">Total</h3>
+							<h1>{{total}}</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button type="button" class="btn btn-primary" ng-click="showDetail()">Detail</button>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="detail">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>IP</th>
+									<th>OS</th>
+									<th>BROWSER</th>
+									<th>TANGGAL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in stats">
+									<td>{{item.ip}}</td>
+									<td>{{item.os}}</td>
+									<td>{{item.browser}}</td>
+									<td>{{item.date_add}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	  </div>
+</div>

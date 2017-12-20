@@ -1,0 +1,25 @@
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li class="active">Gallery</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Gallery</h1>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel-heading">Event List&nbsp;&nbsp;&nbsp;<button ng-click="eventAdd('templates/popup-gallery.html')" class="btn btn-primary">Add Gallery</button>&nbsp;&nbsp;&nbsp;
+			</div>
+		</div><!--/.row-->
+				
+		
+		<div class="row">
+			<div class="col-lg-3" ng-repeat="item in gallerys">
+				<div class="panel panel-default">
+					<img class="full-w" ng-src="../{{item.image}}">
+					<button class="btn btn-danger btn-del-gallery" ng-click="galleryDelete(item.id)">Delete</button>
+				</div>
+			</div>
+		</div><!--/.row-->	
